@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SB Admin - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS-->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/jquery.datetimepicker.css">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Navigation-->
+<header>
+    <% include /navbar %>
+</header>
+<div class="content-wrapper" style="margin-left: 0px !important; ">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Companies List</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-10">
+                        <h4><i class="fa fa-table"></i> Companies List</h4>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addcompany" type="button">
+                            <i class="fa fa-plus"></i> New Company
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Contact Person</th>
+                                <th>Start date</th>
+                                <th>Advance</th>
+                                <th>Due</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Contact Person</th>
+                                <th>Start date</th>
+                                <th>Advance</th>
+                                <th>Due</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+
+                            <tr>
+                                <td>Neo Provectus</td>
+                                <td>Prakash</td>
+                                <td>2011/08/14</td>
+                                <td>$200</td>
+                                <td>$163,000</td>
+                                <td><i class="fa fa-edit"></i> <i class="fa fa-ban"></i> <a href="index.php/Admin/componentsList"><i class="fa fa-link"></i></a></td>
+                            </tr>
+
+                            <tr>
+                                <td>Device Comcepts</td>
+                                <td>Ebby Thomas</td>
+                                <td>2011/05/07</td>
+                                <td>$235,500</td>
+                                <td>$145,000</td>
+                                <td><i class="fa fa-edit"></i> <i class="fa fa-ban"></i> <a href="index.php/Admin/componentsList"><i class="fa fa-link"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>SDB Systems and Solutions</td>
+                                <td>Satish Gopal</td>
+                                <td>2008/10/26</td>
+                                <td>$235,500</td>
+                                <td>$235,500</td>
+                                <td><i class="fa fa-edit"></i> <i class="fa fa-ban"></i> <a href="index.php/Admin/componentsList"><i class="fa fa-link"></i></a></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer" style="width: 100% ">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © Company</small>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="addcompany" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4> Add New Company</h4>
+            </div>
+            <div class="modal-body">
+                <form id="rendered-form">
+                    <div class="rendered-form">
+                        <div class="fb-text form-group field-cname">
+                            <label for="cname" class="fb-text-label">Company Name</label>
+                            <input type="text" class="form-control" name="cname" id="cname">
+                        </div>
+                        <div class="fb-text form-group field-cperson">
+                            <label for="cperson" class="fb-text-label">Contact Person</label>
+                            <input type="text" class="form-control" name="cperson" id="cperson">
+                        </div>
+                        <div class="fb-date form-group ">
+                            <label for="sdate" class="fb-date-label">Start Date</label>
+                            <input type="text" class="form-control" name="startDate" id="startDate">
+                        </div>
+                        <div class="fb-text form-group field-advance">
+                            <label for="advance" class="fb-text-label">Advance</label>
+                            <input type="text" class="form-control" name="advance" id="advance">
+                        </div>
+                        <div class="fb-text form-group field-due">
+                            <label for="due" class="fb-text-label">Due</label>
+                            <input type="text" class="form-control" name="due" id="due">
+                        </div>
+                        <div class="fb-button form-group field-submit">
+                            <button type="button" class="btn btn-success" name="submit" style="success" id="submit">
+                                Submit
+                            </button>
+                            <button type="button" class="btn btn-danger" name="cancel" style="danger" id="cancel">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="assets/js/sb-admin-datatables.min.js"></script>
+    <script src="assets/js/jquery.datetimepicker.full.min.js"></script>
+    <script>
+        $(function () {
+            $('#startDate').datetimepicker({
+                showSecond: true,
+                format: 'Y-m-d H:i',
+            });
+
+        });
+        $(function () {
+            $('#startDate').datetimepicker({
+                showSecond: true,
+                format: 'Y-m-d H:i',
+            });
+
+        });
+    </script>
+    </body>
+
+</html>
